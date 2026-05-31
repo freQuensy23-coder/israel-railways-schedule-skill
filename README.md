@@ -1,5 +1,9 @@
 # Israel Railways Schedule Skill
 
+<p align="center">
+  <img src="assets/logo.png" alt="Israel Railways Schedule Skill logo" width="220">
+</p>
+
 A reusable Hermes Agent skill for checking Israel Railways schedules through the public `railway.co.il/en` timetable form.
 
 It documents:
