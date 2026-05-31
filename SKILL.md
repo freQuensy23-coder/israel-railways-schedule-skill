@@ -376,6 +376,8 @@ Do not say “скорее всего” once the route has been matched. If the
 
 6. **Overexplaining during rescue.** Give the immediate action first, then details.
 
+7. **Using Wikipedia station layout for transfers.** If Wikipedia has a station-layout description (`Platforms`, `Tracks`, `side platform`, `island platform`, numbering direction), use it to answer whether two platform numbers are the same physical island or require a tunnel/bridge. Example: Binyamina is `1 side platform + 1 island platform`, with tracks 1–3 east→west, so 2↔3 is the same island and 1↔2/3 requires the pedestrian tunnel/bridge; if Wikipedia lacks this layout data, say the physical transfer is not verified.
+
 ## Verification Checklist
 
 - [ ] Current Israel time checked with `TZ=Asia/Jerusalem date`.
