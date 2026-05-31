@@ -172,6 +172,32 @@ for value, name in re.findall(r'<option value="(\d+)"[^>]*>\s*([^<]+?)\s*</optio
 PY
 ```
 
+## Ready-to-Use Script
+
+This skill includes a working parser script:
+
+```bash
+~/.hermes/skills/productivity/israel-railways-schedule/scripts/rail_schedule.py
+```
+
+Use it before rewriting ad hoc parsing code.
+
+Examples:
+
+```bash
+# Find station IDs
+rail_schedule.py stations --filter Herzliya
+
+# Query a route by station IDs or name substrings
+rail_schedule.py route --from 3700 --to 1600 --time 10:50 --after-now --limit 1 --compact
+rail_schedule.py route --from "Tel Aviv - Savidor" --to Nahariya --time now --limit 3
+
+# Live rescue: boarded in Tel Aviv, intended Herzliya, train skipped it
+rail_schedule.py rescue --from 3700 --intended Herzliya --towards Nahariya --time 10:50 --passed "Tel Aviv - University" --recovery
+```
+
+The `rescue` command matches trains that do not include the intended station and, when `--passed` is supplied, prefers the train where the passed station time is before the query time and the next stop is after it.
+
 ## How to Query the Schedule Form
 
 Use a GET request to `https://railway.co.il/en` with these fields:
@@ -358,4 +384,3 @@ Do not say “скорее всего” once the route has been matched. If the
 - [ ] Route details parsed from returned HTML, not inferred from search snippets.
 - [ ] Next stop/time identified from the matched train route.
 - [ ] Recovery route queried separately if the user needs to get back.
-

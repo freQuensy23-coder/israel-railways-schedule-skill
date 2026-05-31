@@ -23,6 +23,19 @@ Or manually copy `SKILL.md` into:
 ~/.hermes/skills/productivity/israel-railways-schedule/SKILL.md
 ```
 
+
+## CLI helper script
+
+This repo also includes a ready-to-run parser:
+
+```bash
+python scripts/rail_schedule.py stations --filter Herzliya
+python scripts/rail_schedule.py route --from 3700 --to 1600 --time 10:50 --after-now --limit 1 --compact
+python scripts/rail_schedule.py rescue --from 3700 --intended Herzliya --towards Nahariya --time 10:50 --passed "Tel Aviv - University" --recovery
+```
+
+The script uses only the Python standard library.
+
 ## Important note
 
 This skill does **not** use an official Israel Railways API. It uses the public timetable page, which accepts GET parameters and returns HTML schedule results.
